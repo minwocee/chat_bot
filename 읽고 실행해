@@ -1,0 +1,29 @@
+# 가상환경 생성부터 하기(나는 파이썬 3.11.1 버전 사용중이야)
+source Vertual_env/Scripts/activate
+
+# 사용하는 라이브러리들 정리
+pip install pdfplumber chromadb langchain python-dotenv google-generativeai
+
+
+
+# 백엔드 서버 가동
+pip install fastapi uvicorn
+
+uvicorn back:app --reload
+
+# 리액트&테일윈드 활용 프론트 구축
+https://nodejs.org/ko
+
+위 사이트 접속해서 lts 버전 다운후 vscode 재부팅
+
+# 프론트 환경 구축
+npx create-react-app frontend
+src app.css, app.js 내 코드 복사해서 복붙
+
+# frontend 폴더에서 진행
+npm install axios
+npm start
+
+
+
+

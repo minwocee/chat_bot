@@ -1,0 +1,179 @@
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+  background: linear-gradient(#ffe6f0, #e6ccff, #ccf2ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: "Pretendard-Regular", sans-serif;
+}
+
+.container_box {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+  max-height: 80vh;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title > img {
+  width: 80px;
+  height: 80px;
+}
+.title > h1 {
+  font-size: 28px;
+  color: black;
+}
+
+.container_box {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.description {
+  font-size: 15px;
+  color: #888;
+  margin-top: -10px;
+}
+
+textarea {
+  width: 100%;
+  height: 120px;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #d5d5d5;
+  border-radius: 8px;
+  resize: none;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(255, 192, 203, 0.3);
+  position: relative;
+  font-family: "Pretendard-Regular", sans-serif;
+}
+
+button {
+  padding: 10px 20px;
+  background: #e6b3ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.4s ease;
+  background-size: 200% auto;
+}
+
+button:hover {
+  background-image: linear-gradient(
+    45deg,
+    #ff9a9e,
+    #fad0c4,
+    #fbc2eb,
+    #a18cd1,
+    #84fab0,
+    #8fd3f4,
+    #a6c0fe
+  );
+  background-position: right center;
+  color: #fff;
+}
+
+.chat-history {
+  margin-top: 30px;
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding-right: 5px;
+}
+
+.message {
+  display: flex;
+  max-width: 100%;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.bot {
+  justify-content: flex-start;
+}
+
+.bubble {
+  padding: 14px 18px;
+  border-radius: 16px;
+  max-width: 75%;
+  font-size: 15px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.user .bubble {
+  background-color: #ffb3d9;
+  color: #333;
+  border-bottom-right-radius: 4px;
+}
+
+.bot .bubble {
+  background-color: #f0e5ff;
+  color: #333;
+  border-bottom-left-radius: 4px;
+}
+
+.sender-label {
+  font-size: 13px;
+  margin-bottom: 4px;
+  opacity: 0.7;
+  padding: 0 4px;
+}
+
+.message.user .sender-label {
+  text-align: right;
+  color: #cc8ae4;
+}
+
+.message.bot .sender-label {
+  text-align: left;
+  color: #999;
+}
+
+.loader {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ccc;
+  border-top: 3px solid #cc8ae4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
