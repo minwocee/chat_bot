@@ -1,4 +1,5 @@
 # semantic_ingest_combined.py – 의미 기반 청크 생성 및 저장 통합 스크립트
+# 컬렉션 명: semantic_education_chunks
 import os
 import re
 import uuid
@@ -18,8 +19,8 @@ if not OPENAI_API_KEY:
 # ─── 설정 ──────────────────────────────────────────────
 PDF_PATH = Path("역량중심 교육과정 개발 보고서_컴퓨터공학과_축약.pdf")
 DB_PATH = "./chroma_db"
-COL_NAME = "semantic_education_chunks"
-OUTPUT_TEXT_FILE = "semantic_blocks_output.txt"
+COL_NAME = "semantic_education_chunks"    # 컬렉션 명
+OUTPUT_TEXT_FILE = "semantic_blocks_output_best.txt"
 
 # ─── 로깅 설정 ─────────────────────────────────────────
 logging.basicConfig(level=logging.INFO)
@@ -57,7 +58,7 @@ def extract_semantic_blocks(pdf_path: Path):
 def store_blocks_to_chroma(blocks):
     embedding_fn = embedding_functions.OpenAIEmbeddingFunction(
         api_key=OPENAI_API_KEY,
-        model_name="text-embedding-3-small"  # 최신 임베딩 모델 적용
+        model_name="text-embedding-3-small"  # 최신 임베딩 모델 적용  text-embedding-3-large  text-embedding-3-small
     )
     client = chromadb.PersistentClient(path=DB_PATH)
 
@@ -96,3 +97,5 @@ if __name__ == "__main__":
     blocks = extract_semantic_blocks(PDF_PATH)
     store_blocks_to_chroma(blocks)
     save_blocks_to_txt(blocks, OUTPUT_TEXT_FILE)
+    print("semantic_education_chunks 임베딩 저장 완료")
+

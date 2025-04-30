@@ -44,12 +44,11 @@ function App() {
       <div className="container_box">
         <div className="title">
           <img src="./logo.png" alt="logo" />
-          <h1> 컴공도우미봇</h1>
+          <h1> 컴퓨터공학과 안내 챗봇 </h1>
         </div>
 
         <p className="description">
-          컴공 신입생을 위한 스마트 질문 도우미입니다. 궁금한 내용을 입력하고
-          대화해보세요!
+          컴퓨터공학과에 관심있는 학생들을 위한 안내 챗봇 입니다. 궁금한 내용을 입력하고 대화해보세요!
         </p>
 
         <div className="chat-history">
@@ -76,7 +75,7 @@ function App() {
         </div>
 
         <textarea
-          placeholder="질문을 입력하세요 (예: 자료구조란?)"
+          placeholder="질문을 입력하세요 (예: 인공지능 관련 과목을 추천해줘)"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => {
